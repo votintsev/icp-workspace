@@ -7,6 +7,10 @@ services:
 #    user: ${USER_UID:-1000}:${USER_GID:-1000}
     tty: true
     environment:
+      - HOST=0.0.0.0
       - TZ=Europe/Moscow
+    volumes:
+      - ./projects:/projects
     ports:
-      - ${UI_HOST_PORT:-8000}:8000
+      - ${UI_HOST_PORT:-8080}:8080
+      - ${UI_HOST_PORT:-3000}:3000
